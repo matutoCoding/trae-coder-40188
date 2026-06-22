@@ -1,0 +1,685 @@
+{
+  "tasks": {
+    "c1243fb4-54e5-48fb-bd3f-3049d48dec30": {
+      "id": "c1243fb4-54e5-48fb-bd3f-3049d48dec30",
+      "title": "2024年度CEO采访",
+      "speakerNames": [
+        "张总",
+        "李记者"
+      ],
+      "sensitivityLevel": "confidential",
+      "audioFilename": null,
+      "audioOriginalName": null,
+      "status": "completed",
+      "submittedBy": "wangxiaoming",
+      "createdAt": 1782086562104,
+      "updatedAt": 1782086564108,
+      "completedAt": 1782086564108,
+      "errorMessage": null
+    },
+    "cf9a9514-2a37-44ec-8663-b21ffe7e6496": {
+      "id": "cf9a9514-2a37-44ec-8663-b21ffe7e6496",
+      "title": "产品战略发布会采访",
+      "speakerNames": [
+        "王总",
+        "赵记者"
+      ],
+      "sensitivityLevel": "confidential",
+      "audioFilename": null,
+      "audioOriginalName": null,
+      "status": "completed",
+      "submittedBy": "test_user",
+      "createdAt": 1782086709497,
+      "updatedAt": 1782086711506,
+      "completedAt": 1782086711506,
+      "errorMessage": null
+    }
+  },
+  "transcripts": {
+    "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9": {
+      "id": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "taskId": "c1243fb4-54e5-48fb-bd3f-3049d48dec30",
+      "durationSeconds": 51,
+      "totalSentences": 13,
+      "createdAt": 1782086564106,
+      "updatedAt": 1782086564107
+    },
+    "346e1fc4-15e0-4d70-93ec-8d258b3f68fa": {
+      "id": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "taskId": "cf9a9514-2a37-44ec-8663-b21ffe7e6496",
+      "durationSeconds": 51,
+      "totalSentences": 13,
+      "createdAt": 1782086711504,
+      "updatedAt": 1782086711505
+    }
+  },
+  "sentences": {
+    "01773816-5f49-4509-88fc-bc7e0fde6461": {
+      "id": "01773816-5f49-4509-88fc-bc7e0fde6461",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 0,
+      "endTime": 3.5,
+      "content": "大家好，欢迎参加今天的采访。首先介绍一下我们公司最新的发展情况。",
+      "wordCount": 1,
+      "isSensitive": false,
+      "sensitiveCategories": [],
+      "sortOrder": 0,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "0db054ed-6a75-4230-9b58-ca5bd9521d46": {
+      "id": "0db054ed-6a75-4230-9b58-ca5bd9521d46",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "李记者",
+      "speakerIndex": 1,
+      "startTime": 3,
+      "endTime": 6.5,
+      "content": "张总您好，很高兴有这个机会。首先想请问一下，贵公司今年的营收目标是多少？",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 1,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "ba6aa356-8ef9-44ba-be50-1999c1ee4cac": {
+      "id": "ba6aa356-8ef9-44ba-be50-1999c1ee4cac",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 6,
+      "endTime": 9.5,
+      "content": "关于财务数字方面，我们今年的目标是营收增长30%，达到五十亿的规模。具体的净利润数据还需要看下半年的表现。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 2,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "85b53ba9-eb40-4e08-9210-5200ea7104de": {
+      "id": "85b53ba9-eb40-4e08-9210-5200ea7104de",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "李记者",
+      "speakerIndex": 1,
+      "startTime": 10,
+      "endTime": 13.5,
+      "content": "了解了。那在产品方面，有没有什么新的动向可以透露？比如产品X的进展如何？",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product"
+      ],
+      "sortOrder": 3,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "1c50b2c5-db24-4bad-8dd4-73599976677c": {
+      "id": "1c50b2c5-db24-4bad-8dd4-73599976677c",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 14,
+      "endTime": 17.5,
+      "content": "产品X是我们正在研发的下一代产品，目前还属于未公开的状态，请暂时不要报道这部分内容。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product",
+        "legal"
+      ],
+      "sortOrder": 4,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "65ad04a3-80ff-4d43-910a-9ac3ef661e1a": {
+      "id": "65ad04a3-80ff-4d43-910a-9ac3ef661e1a",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "李记者",
+      "speakerIndex": 1,
+      "startTime": 18,
+      "endTime": 21.5,
+      "content": "好的，我明白了。那可以谈谈你们和重要客户的合作情况吗？比如客户A那边的项目进展。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "customer_name"
+      ],
+      "sortOrder": 5,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "6a1b1734-3dae-44d6-b8d5-d7d7f07e997c": {
+      "id": "6a1b1734-3dae-44d6-b8d5-d7d7f07e997c",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 22,
+      "endTime": 25.5,
+      "content": "客户A是我们的战略客户之一，目前合作进展顺利。不过具体的项目细节涉及保密，不方便透露太多。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "customer_name",
+        "legal"
+      ],
+      "sortOrder": 6,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "e8917c11-cfb2-4b9e-b896-1bec89cb07be": {
+      "id": "e8917c11-cfb2-4b9e-b896-1bec89cb07be",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "李记者",
+      "speakerIndex": 1,
+      "startTime": 26,
+      "endTime": 29.5,
+      "content": "理解。那回到公开信息层面，贵公司在市场份额方面有什么优势？",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 7,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "4f3d9dff-cf67-426c-ba3e-592b513904d0": {
+      "id": "4f3d9dff-cf67-426c-ba3e-592b513904d0",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 29,
+      "endTime": 32.5,
+      "content": "我们在行业内的市场份额大约占25%左右，处于领先地位。这主要得益于我们的技术优势和服务质量。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 8,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "88c0bb24-c5c9-40c8-82cc-221b303748af": {
+      "id": "88c0bb24-c5c9-40c8-82cc-221b303748af",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "李记者",
+      "speakerIndex": 1,
+      "startTime": 34,
+      "endTime": 37.5,
+      "content": "非常感谢张总的分享。最后还有一个问题，关于Project Alpha项目，您能简单介绍一下吗？",
+      "wordCount": 2,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product"
+      ],
+      "sortOrder": 9,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "2fef24fd-d63b-43bb-84ad-218e7b0df406": {
+      "id": "2fef24fd-d63b-43bb-84ad-218e7b0df406",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 38,
+      "endTime": 41.5,
+      "content": "Project Alpha是我们的内部项目代号，目前还在保密阶段，暂时不能对外公布。等时机成熟我们会统一发布。",
+      "wordCount": 2,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product",
+        "legal"
+      ],
+      "sortOrder": 10,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "2a4466c7-9859-4ccc-b07d-7081f5c97698": {
+      "id": "2a4466c7-9859-4ccc-b07d-7081f5c97698",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "李记者",
+      "speakerIndex": 1,
+      "startTime": 43,
+      "endTime": 46.5,
+      "content": "好的，非常感谢张总接受我们的采访。期待贵公司未来有更多好消息。",
+      "wordCount": 1,
+      "isSensitive": false,
+      "sensitiveCategories": [],
+      "sortOrder": 11,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "185801e7-1f31-45ed-9772-c8b03d820f15": {
+      "id": "185801e7-1f31-45ed-9772-c8b03d820f15",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "speakerName": "张总",
+      "speakerIndex": 0,
+      "startTime": 47,
+      "endTime": 50.5,
+      "content": "谢谢，也感谢你们的关注。再见。",
+      "wordCount": 1,
+      "isSensitive": false,
+      "sensitiveCategories": [],
+      "sortOrder": 12,
+      "createdAt": 1782086564107,
+      "updatedAt": 1782086564107
+    },
+    "36d2ae15-aa6d-4a72-80bf-734d30867de0": {
+      "id": "36d2ae15-aa6d-4a72-80bf-734d30867de0",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 0,
+      "endTime": 3.5,
+      "content": "大家好，欢迎参加今天的采访。首先介绍一下我们公司最新的发展情况。",
+      "wordCount": 1,
+      "isSensitive": false,
+      "sensitiveCategories": [],
+      "sortOrder": 0,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "eb3deda6-7713-44ac-b41a-367e6cf25917": {
+      "id": "eb3deda6-7713-44ac-b41a-367e6cf25917",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "赵记者",
+      "speakerIndex": 1,
+      "startTime": 3,
+      "endTime": 6.5,
+      "content": "张总您好，很高兴有这个机会。首先想请问一下，贵公司今年的营收目标是多少？",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 1,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "21054e16-6ccf-4d8e-80de-82cd98b79962": {
+      "id": "21054e16-6ccf-4d8e-80de-82cd98b79962",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 6,
+      "endTime": 9.5,
+      "content": "关于财务数字方面，我们今年的目标是营收增长30%，达到五十亿的规模。具体的净利润数据还需要看下半年的表现。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 2,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "e317ed50-74ff-4690-87fb-15307b3b6b2b": {
+      "id": "e317ed50-74ff-4690-87fb-15307b3b6b2b",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "赵记者",
+      "speakerIndex": 1,
+      "startTime": 10,
+      "endTime": 13.5,
+      "content": "了解了。那在产品方面，有没有什么新的动向可以透露？比如产品X的进展如何？",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product"
+      ],
+      "sortOrder": 3,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "be6f7430-421a-4aa4-bd72-36d72fbbe1dc": {
+      "id": "be6f7430-421a-4aa4-bd72-36d72fbbe1dc",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 14,
+      "endTime": 17.5,
+      "content": "产品X是我们正在研发的下一代产品，目前还属于未公开的状态，请暂时不要报道这部分内容。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product",
+        "legal"
+      ],
+      "sortOrder": 4,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "25f34609-903c-4117-8c23-8ea1a840416f": {
+      "id": "25f34609-903c-4117-8c23-8ea1a840416f",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "赵记者",
+      "speakerIndex": 1,
+      "startTime": 18,
+      "endTime": 21.5,
+      "content": "好的，我明白了。那可以谈谈你们和重要客户的合作情况吗？比如客户A那边的项目进展。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "customer_name"
+      ],
+      "sortOrder": 5,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "fb726436-3b85-476b-95f6-d0073162190d": {
+      "id": "fb726436-3b85-476b-95f6-d0073162190d",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 22,
+      "endTime": 25.5,
+      "content": "客户A是我们的战略客户之一，目前合作进展顺利。不过具体的项目细节涉及保密，不方便透露太多。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "customer_name",
+        "legal"
+      ],
+      "sortOrder": 6,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "8e72a196-f49d-493e-8076-6d7c992059dd": {
+      "id": "8e72a196-f49d-493e-8076-6d7c992059dd",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "赵记者",
+      "speakerIndex": 1,
+      "startTime": 26,
+      "endTime": 29.5,
+      "content": "理解。那回到公开信息层面，贵公司在市场份额方面有什么优势？",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 7,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "ce6c6297-66b0-4e24-a79e-22c0e727d505": {
+      "id": "ce6c6297-66b0-4e24-a79e-22c0e727d505",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 29,
+      "endTime": 32.5,
+      "content": "我们在行业内的市场份额大约占25%左右，处于领先地位。这主要得益于我们的技术优势和服务质量。",
+      "wordCount": 1,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "financial"
+      ],
+      "sortOrder": 8,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "ea068e67-e24e-475e-a920-017bada9f952": {
+      "id": "ea068e67-e24e-475e-a920-017bada9f952",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "赵记者",
+      "speakerIndex": 1,
+      "startTime": 34,
+      "endTime": 37.5,
+      "content": "非常感谢张总的分享。最后还有一个问题，关于Project Alpha项目，您能简单介绍一下吗？",
+      "wordCount": 2,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product"
+      ],
+      "sortOrder": 9,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "0bb425e5-33c6-4780-b353-b529ad4094cc": {
+      "id": "0bb425e5-33c6-4780-b353-b529ad4094cc",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 38,
+      "endTime": 41.5,
+      "content": "Project Alpha是我们的内部项目代号，目前还在保密阶段，暂时不能对外公布。等时机成熟我们会统一发布。",
+      "wordCount": 2,
+      "isSensitive": true,
+      "sensitiveCategories": [
+        "unreleased_product",
+        "legal"
+      ],
+      "sortOrder": 10,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "a8ba0b63-a0d3-4bb2-851a-ce08ae3983b5": {
+      "id": "a8ba0b63-a0d3-4bb2-851a-ce08ae3983b5",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "赵记者",
+      "speakerIndex": 1,
+      "startTime": 43,
+      "endTime": 46.5,
+      "content": "好的，非常感谢张总接受我们的采访。期待贵公司未来有更多好消息。",
+      "wordCount": 1,
+      "isSensitive": false,
+      "sensitiveCategories": [],
+      "sortOrder": 11,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    },
+    "060fed2b-851f-44b7-9814-946489f22943": {
+      "id": "060fed2b-851f-44b7-9814-946489f22943",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "speakerName": "王总",
+      "speakerIndex": 0,
+      "startTime": 47,
+      "endTime": 50.5,
+      "content": "谢谢，也感谢你们的关注。再见。",
+      "wordCount": 1,
+      "isSensitive": false,
+      "sensitiveCategories": [],
+      "sortOrder": 12,
+      "createdAt": 1782086711505,
+      "updatedAt": 1782086711505
+    }
+  },
+  "reviewComments": {
+    "5f23d620-3335-48e9-9838-ed9a26f34b82": {
+      "id": "5f23d620-3335-48e9-9838-ed9a26f34b82",
+      "sentenceId": "1c50b2c5-db24-4bad-8dd4-73599976677c",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "actionType": "need_confirm",
+      "content": "此句涉及未发布产品信息，请确认是否可以引用",
+      "reviewer": "legal_zhang",
+      "createdAt": 1782086599321,
+      "updatedAt": 1782086599321,
+      "isLatest": false,
+      "version": 1
+    },
+    "08f44891-a9f0-4a14-877f-d643f048cc03": {
+      "id": "08f44891-a9f0-4a14-877f-d643f048cc03",
+      "sentenceId": "1c50b2c5-db24-4bad-8dd4-73599976677c",
+      "transcriptId": "84e0dedc-37aa-4ddf-9d95-fbc88c1f1ba9",
+      "actionType": "no_external",
+      "content": "确认不能外发，产品X属于未公开信息",
+      "reviewer": "pr_manager_li",
+      "createdAt": 1782086609210,
+      "updatedAt": 1782086609210,
+      "isLatest": true,
+      "version": 2
+    },
+    "798f36a7-1dfe-4b6a-ab1a-0299499f2ac1": {
+      "id": "798f36a7-1dfe-4b6a-ab1a-0299499f2ac1",
+      "sentenceId": "eb3deda6-7713-44ac-b41a-367e6cf25917",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "actionType": "need_confirm",
+      "content": "此句涉及未公开产品信息，请法务确认",
+      "reviewer": "pr_reviewer",
+      "createdAt": 1782086712015,
+      "updatedAt": 1782086712015,
+      "isLatest": false,
+      "version": 1
+    },
+    "0c3a796f-bd9d-4a4c-88d8-add18cb5eff9": {
+      "id": "0c3a796f-bd9d-4a4c-88d8-add18cb5eff9",
+      "sentenceId": "eb3deda6-7713-44ac-b41a-367e6cf25917",
+      "transcriptId": "346e1fc4-15e0-4d70-93ec-8d258b3f68fa",
+      "actionType": "no_external",
+      "content": "确认不能外发，属于内部保密信息",
+      "reviewer": "legal_reviewer",
+      "createdAt": 1782086712017,
+      "updatedAt": 1782086712017,
+      "isLatest": true,
+      "version": 2
+    }
+  },
+  "sensitiveWords": [
+    {
+      "id": 1,
+      "word": "产品X",
+      "category": "unreleased_product",
+      "description": "未发布产品代号",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "word": "Project Alpha",
+      "category": "unreleased_product",
+      "description": "内部项目代号",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "word": "下一代产品",
+      "category": "unreleased_product",
+      "description": "未发布产品描述",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "word": "营收目标",
+      "category": "financial",
+      "description": "财务数字相关",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "word": "净利润",
+      "category": "financial",
+      "description": "财务数字相关",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "word": "市场份额",
+      "category": "financial",
+      "description": "财务数字相关",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 7,
+      "word": "毛利率",
+      "category": "financial",
+      "description": "财务数字相关",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "word": "亿",
+      "category": "financial",
+      "description": "大额数字单位",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 9,
+      "word": "千万",
+      "category": "financial",
+      "description": "大额数字单位",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 10,
+      "word": "百万",
+      "category": "financial",
+      "description": "大额数字单位",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 11,
+      "word": "客户A",
+      "category": "customer_name",
+      "description": "客户名称",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 12,
+      "word": "客户B",
+      "category": "customer_name",
+      "description": "客户名称",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 13,
+      "word": "战略客户",
+      "category": "customer_name",
+      "description": "重要客户代称",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 14,
+      "word": "未公开",
+      "category": "legal",
+      "description": "法律敏感信息",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 15,
+      "word": "保密",
+      "category": "legal",
+      "description": "保密信息",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 16,
+      "word": "内部资料",
+      "category": "legal",
+      "description": "内部信息",
+      "createdAt": 1782086539755,
+      "isActive": true
+    },
+    {
+      "id": 17,
+      "word": "机密项目",
+      "category": "unreleased_product",
+      "description": "高度机密的项目名称",
+      "createdAt": 1782086712025,
+      "isActive": true
+    }
+  ],
+  "_meta": {
+    "sensitiveWordIdSeq": 17
+  }
+}
