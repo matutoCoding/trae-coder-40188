@@ -34,9 +34,25 @@ const upload = multer({
   }
 });
 
-router.post('/', upload.single('audio'), (req, res) => {
+function handleUploadError(err, req, res, next) {
+  if (err) {
+    return res.status(400).json({
+      error: '音频上传失败',
+      reason: err.message || '未知错误'
+    });
+  }
+  next();
+}
+
+router.post('/', (req, res, next) => {
+  upload.single('audio')(req, res, (err) => handleUploadError(err, req, res, next));
+}, (req, res) => {
   try {
     const { title, speakerNames, sensitivityLevel, submittedBy } = req.body;
+
+    if (!req.file) {
+      return res.status(400).json({ error: '音频文件为必填项，请上传音频文件（字段名: audio）' });
+    }
 
     if (!title) {
       return res.status(400).json({ error: '缺少必填字段: title' });

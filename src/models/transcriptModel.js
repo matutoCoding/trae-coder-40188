@@ -54,6 +54,7 @@ function addSentences(transcriptId, sentences) {
   sentences.forEach((s, idx) => {
     const id = uuidv4();
     const categories = s.sensitiveCategories || [];
+    const matchedWords = s.matchedSensitiveWords || [];
     const wordCount = s.content ? s.content.split(/\s+/).filter(w => w.length > 0).length : 0;
 
     db.sentences[id] = {
@@ -67,6 +68,7 @@ function addSentences(transcriptId, sentences) {
       wordCount,
       isSensitive: categories.length > 0,
       sensitiveCategories: categories,
+      matchedSensitiveWords: matchedWords,
       sortOrder: startOrder + idx,
       createdAt: now,
       updatedAt: now
@@ -110,6 +112,7 @@ function getSentences(transcriptId, options = {}) {
     wordCount: row.wordCount,
     isSensitive: row.isSensitive,
     sensitiveCategories: row.sensitiveCategories || [],
+    matchedSensitiveWords: row.matchedSensitiveWords || [],
     sortOrder: row.sortOrder,
     createdAt: row.createdAt,
     updatedAt: row.updatedAt
@@ -133,6 +136,7 @@ function getSentenceById(sentenceId) {
     wordCount: row.wordCount,
     isSensitive: row.isSensitive,
     sensitiveCategories: row.sensitiveCategories || [],
+    matchedSensitiveWords: row.matchedSensitiveWords || [],
     sortOrder: row.sortOrder,
     createdAt: row.createdAt,
     updatedAt: row.updatedAt

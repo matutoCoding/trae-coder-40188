@@ -63,13 +63,28 @@ function startTranscription(taskId) {
 }
 
 async function processTranscription(task) {
-  const audioPath = task.audioFilename
-    ? path.join(config.uploadDir, task.audioFilename)
-    : null;
+  if (!task.audioFilename) {
+    throw new Error('缺少音频文件，无法进行转写');
+  }
+
+  const audioPath = path.join(config.uploadDir, task.audioFilename);
+
+  if (!fs.existsSync(audioPath)) {
+    throw new Error(`音频文件不存在: ${task.audioOriginalName || task.audioFilename}`);
+  }
 
   const speakerNames = task.speakerNames || [];
 
-  const result = await mockTranscribe(audioPath, speakerNames);
+  let result;
+  try {
+    result = await mockTranscribe(audioPath, speakerNames);
+  } catch (err) {
+    throw new Error(`转写服务处理失败: ${err.message}`);
+  }
+
+  if (!result || !result.sentences || result.sentences.length === 0) {
+    throw new Error('转写结果为空，未能从音频中识别出有效内容');
+  }
 
   const transcript = transcriptModel.createTranscript(task.id, result.durationSeconds);
 
