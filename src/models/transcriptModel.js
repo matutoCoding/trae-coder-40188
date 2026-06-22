@@ -99,6 +99,16 @@ function getSentences(transcriptId, options = {}) {
     sentences = sentences.filter(s => s.speakerName === options.speakerName);
   }
 
+  if (options.sensitiveCategory) {
+    const categories = Array.isArray(options.sensitiveCategory)
+      ? options.sensitiveCategory
+      : [options.sensitiveCategory];
+    sentences = sentences.filter(s =>
+      s.isSensitive && s.sensitiveCategories &&
+      categories.some(cat => s.sensitiveCategories.includes(cat))
+    );
+  }
+
   sentences.sort((a, b) => a.sortOrder - b.sortOrder);
 
   return sentences.map(row => ({

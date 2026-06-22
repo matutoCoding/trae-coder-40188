@@ -9,6 +9,7 @@ function createTask(taskData) {
 
   const task = {
     id,
+    batchId: taskData.batchId || null,
     title: taskData.title,
     speakerNames: taskData.speakerNames || null,
     sensitivityLevel: taskData.sensitivityLevel || config.sensitivityLevels.INTERNAL,
@@ -36,6 +37,7 @@ function getTaskById(id) {
 
   return {
     id: task.id,
+    batchId: task.batchId || null,
     title: task.title,
     speakerNames: task.speakerNames || null,
     sensitivityLevel: task.sensitivityLevel,
@@ -60,6 +62,10 @@ function getTaskList(filters = {}, page = 1, pageSize = 20) {
     tasks = tasks.filter(t => t.status === filters.status);
   }
 
+  if (filters.batchId) {
+    tasks = tasks.filter(t => t.batchId === filters.batchId);
+  }
+
   if (filters.sensitivityLevel) {
     tasks = tasks.filter(t => t.sensitivityLevel === filters.sensitivityLevel);
   }
@@ -75,13 +81,16 @@ function getTaskList(filters = {}, page = 1, pageSize = 20) {
 
   const list = paginated.map(task => ({
     id: task.id,
+    batchId: task.batchId || null,
     title: task.title,
+    audioOriginalName: task.audioOriginalName,
     sensitivityLevel: task.sensitivityLevel,
     status: task.status,
     submittedBy: task.submittedBy,
     createdAt: task.createdAt,
     updatedAt: task.updatedAt,
-    completedAt: task.completedAt
+    completedAt: task.completedAt,
+    errorMessage: task.errorMessage
   }));
 
   return {

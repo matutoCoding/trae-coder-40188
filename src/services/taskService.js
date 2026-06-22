@@ -4,10 +4,17 @@ const { v4: uuidv4 } = require('uuid');
 
 const taskModel = require('../models/taskModel');
 const transcriptModel = require('../models/transcriptModel');
-const { mockTranscribe } = require('./transcriptionService');
+const { mockTranscribe, validateAudioFile } = require('./transcriptionService');
 const config = require('../config');
 
 const processingTasks = new Set();
+
+const ALLOWED_AUDIO_EXT = ['.mp3', '.wav', '.m4a', '.aac', '.flac', '.ogg', '.wma'];
+
+function isValidAudioExtension(filename) {
+  const ext = path.extname(filename || '').toLowerCase();
+  return ALLOWED_AUDIO_EXT.includes(ext);
+}
 
 function submitTask(taskData, audioFile = null) {
   let audioFilename = null;
@@ -23,6 +30,7 @@ function submitTask(taskData, audioFile = null) {
   }
 
   const task = taskModel.createTask({
+    batchId: taskData.batchId || null,
     title: taskData.title,
     speakerNames: taskData.speakerNames || [],
     sensitivityLevel: taskData.sensitivityLevel || config.sensitivityLevels.INTERNAL,
@@ -31,9 +39,53 @@ function submitTask(taskData, audioFile = null) {
     submittedBy: taskData.submittedBy || 'system'
   });
 
+  if (!audioFilename) {
+    taskModel.updateTaskStatus(task.id, config.taskStatus.FAILED, {
+      errorMessage: '缺少音频文件'
+    });
+    return taskModel.getTaskById(task.id);
+  }
+
+  if (!isValidAudioExtension(audioOriginalName)) {
+    taskModel.updateTaskStatus(task.id, config.taskStatus.FAILED, {
+      errorMessage: `不支持的音频格式: ${path.extname(audioOriginalName) || '未知格式'}，支持格式: ${ALLOWED_AUDIO_EXT.join(', ')}`
+    });
+    return taskModel.getTaskById(task.id);
+  }
+
   startTranscription(task.id);
 
-  return task;
+  return taskModel.getTaskById(task.id);
+}
+
+function submitBatchTask(batchData, audioFiles = []) {
+  const batchId = uuidv4();
+  const tasks = [];
+  const now = Date.now();
+
+  audioFiles.forEach((file, index) => {
+    const title = batchData.titleTemplate
+      ? batchData.titleTemplate.replace('{index}', index + 1).replace('{filename}', file.originalname)
+      : `${batchData.batchTitle || '批量任务'} - ${file.originalname}`;
+
+    const task = submitTask({
+      batchId,
+      title,
+      speakerNames: batchData.speakerNames || [],
+      sensitivityLevel: batchData.sensitivityLevel || config.sensitivityLevels.INTERNAL,
+      submittedBy: batchData.submittedBy || 'system'
+    }, file);
+
+    tasks.push(task);
+  });
+
+  return {
+    batchId,
+    totalCount: audioFiles.length,
+    createdAt: now,
+    submittedBy: batchData.submittedBy || 'system',
+    tasks
+  };
 }
 
 function startTranscription(taskId) {
@@ -99,7 +151,9 @@ function getTaskStatus(taskId) {
 
   const result = {
     id: task.id,
+    batchId: task.batchId,
     title: task.title,
+    audioOriginalName: task.audioOriginalName,
     status: task.status,
     sensitivityLevel: task.sensitivityLevel,
     submittedBy: task.submittedBy,
@@ -129,12 +183,69 @@ function getTaskList(filters, page, pageSize) {
   return taskModel.getTaskList(filters, page, pageSize);
 }
 
+function getBatchTasks(batchId, page = 1, pageSize = 50) {
+  const result = taskModel.getTaskList({ batchId }, page, pageSize);
+
+  const tasks = result.list;
+  let completed = 0;
+  let failed = 0;
+  let processing = 0;
+  let pending = 0;
+
+  tasks.forEach(t => {
+    switch (t.status) {
+      case config.taskStatus.COMPLETED: completed++; break;
+      case config.taskStatus.FAILED: failed++; break;
+      case config.taskStatus.PROCESSING: processing++; break;
+      case config.taskStatus.PENDING: pending++; break;
+    }
+  });
+
+  const firstTask = tasks.length > 0 ? tasks[0] : null;
+
+  return {
+    batchId,
+    total: result.total,
+    page: result.page,
+    pageSize: result.pageSize,
+    submittedBy: firstTask ? firstTask.submittedBy : null,
+    createdAt: firstTask ? firstTask.createdAt : null,
+    stats: {
+      completed,
+      failed,
+      processing,
+      pending
+    },
+    tasks
+  };
+}
+
+function retryBatchTasks(batchId) {
+  const result = taskModel.getTaskList({ batchId, status: config.taskStatus.FAILED }, 1, 1000);
+  const retried = [];
+
+  result.list.forEach(task => {
+    retryTask(task.id);
+    retried.push(task.id);
+  });
+
+  return {
+    batchId,
+    retriedCount: retried.length,
+    retriedTaskIds: retried
+  };
+}
+
 function retryTask(taskId) {
   const task = taskModel.getTaskById(taskId);
   if (!task) return null;
 
   if (task.status !== config.taskStatus.FAILED) {
-    return task;
+    return getTaskStatus(taskId);
+  }
+
+  if (!task.audioFilename || !isValidAudioExtension(task.audioOriginalName)) {
+    return getTaskStatus(taskId);
   }
 
   taskModel.updateTaskStatus(taskId, config.taskStatus.PENDING, { errorMessage: null });
@@ -145,7 +256,10 @@ function retryTask(taskId) {
 
 module.exports = {
   submitTask,
+  submitBatchTask,
   getTaskStatus,
   getTaskList,
-  retryTask
+  getBatchTasks,
+  retryTask,
+  retryBatchTasks
 };

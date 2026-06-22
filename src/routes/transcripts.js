@@ -5,6 +5,27 @@ const { asyncHandler } = require('../middleware/common');
 
 const router = express.Router();
 
+function parseFilterOptions(query) {
+  const options = {};
+
+  if (query.onlySensitive === 'true' || query.onlySensitive === '1') {
+    options.onlySensitive = true;
+  }
+  if (query.speakerName) {
+    options.speakerName = query.speakerName;
+  }
+  if (query.sensitiveCategory) {
+    options.sensitiveCategory = Array.isArray(query.sensitiveCategory)
+      ? query.sensitiveCategory
+      : [query.sensitiveCategory];
+  }
+  if (query.reviewStatus) {
+    options.reviewStatus = query.reviewStatus;
+  }
+
+  return options;
+}
+
 router.get('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
   const detail = transcriptService.getTranscriptDetail(id);
@@ -29,19 +50,12 @@ router.get('/task/:taskId', asyncHandler(async (req, res) => {
 
 router.get('/:id/sentences', asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { onlySensitive, speakerName } = req.query;
-
-  const options = {};
-  if (onlySensitive === 'true' || onlySensitive === '1') {
-    options.onlySensitive = true;
-  }
-  if (speakerName) {
-    options.speakerName = speakerName;
-  }
+  const options = parseFilterOptions(req.query);
 
   const sentences = transcriptService.getSentences(id, options);
   res.json({
     total: sentences.length,
+    filter: options,
     sentences
   });
 }));
@@ -49,8 +63,9 @@ router.get('/:id/sentences', asyncHandler(async (req, res) => {
 router.get('/:id/export', asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { format = 'json' } = req.query;
+  const options = parseFilterOptions(req.query);
 
-  const result = transcriptService.exportTranscript(id, format);
+  const result = transcriptService.exportTranscript(id, format, options);
 
   if (!result) {
     return res.status(404).json({ error: '逐字稿不存在' });
@@ -58,6 +73,12 @@ router.get('/:id/export', asyncHandler(async (req, res) => {
 
   if (format === 'text') {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="${result.filename}"`);
+    return res.send(result.content);
+  }
+
+  if (format === 'csv') {
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
     res.setHeader('Content-Disposition', `attachment; filename="${result.filename}"`);
     return res.send(result.content);
   }
